@@ -10,7 +10,7 @@ namespace GlobalX_AssignmentTest
         [Fact]
         public void TestLoadFirstString()
         {
-            string path = "./multiline.txt";
+            string path = "../../../input.txt";
             string expected = "Jonathan Nicholas";
             IEnumerator<string> enumerator = new FileLoader(path).Generator().GetEnumerator();
             enumerator.MoveNext();
@@ -22,7 +22,7 @@ namespace GlobalX_AssignmentTest
         [Fact]
         public void TestLoadMultipleString()
         {
-            string path = "./multiline.txt";
+            string path = "../../../input.txt";
             List<string> expected = new List<string>();
             List<string> actual = new List<string>();
             expected.Add("Jonathan Nicholas");
@@ -42,7 +42,7 @@ namespace GlobalX_AssignmentTest
         [Fact]
         public void TestLoadSomeEqual()
         {
-            string path = "./multiline.txt";
+            string path = "../../../input.txt";
             int count = 3;
             List<string> actual = null;
             GlobalX_Assignment.FileLoader fileLoader= new FileLoader(path);
@@ -53,7 +53,7 @@ namespace GlobalX_AssignmentTest
         [Fact]
         public void TestLoadSomeOverload()
         {
-            string path = "./multiline.txt";
+            string path = "../../../input.txt";
             int count = 3000;
             List<string> actual = null;
             GlobalX_Assignment.FileLoader fileLoader= new FileLoader(path);
