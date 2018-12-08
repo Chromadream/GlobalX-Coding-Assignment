@@ -11,6 +11,7 @@ namespace GlobalX_Assignment
         public FileWriter(string path)
         {
             writer = File.CreateText(path);
+            writer.AutoFlush = true;
         }
 
         public void WriteOne(string input)
