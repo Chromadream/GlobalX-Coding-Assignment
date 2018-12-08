@@ -10,8 +10,8 @@ namespace GlobalX_AssignmentTest
         [Fact]
         public void TestLoadFirstString()
         {
-            string path = "../../../input.txt";
-            string expected = "Jonathan Nicholas";
+            const string path = "../../../input.txt";
+            const string expected = "Jonathan Nicholas";
             IEnumerator<string> enumerator = new FileLoader(path).Generator().GetEnumerator();
             enumerator.MoveNext();
             string actual = enumerator.Current;
@@ -22,7 +22,7 @@ namespace GlobalX_AssignmentTest
         [Fact]
         public void TestLoadMultipleString()
         {
-            string path = "../../../input.txt";
+            const string path = "../../../input.txt";
             List<string> expected = new List<string>();
             List<string> actual = new List<string>();
             expected.Add("Jonathan Nicholas");
@@ -42,8 +42,8 @@ namespace GlobalX_AssignmentTest
         [Fact]
         public void TestLoadSomeEqual()
         {
-            string path = "../../../input.txt";
-            int count = 3;
+            const string path = "../../../input.txt";
+            const int count = 3;
             List<string> actual = null;
             GlobalX_Assignment.FileLoader fileLoader= new FileLoader(path);
             actual = fileLoader.Some(count);
@@ -53,13 +53,24 @@ namespace GlobalX_AssignmentTest
         [Fact]
         public void TestLoadSomeOverload()
         {
-            string path = "../../../input.txt";
-            int count = 3000;
+            const string path = "../../../input.txt";
+            const int count = 3000;
+            const int actualCount = 3;
             List<string> actual = null;
             GlobalX_Assignment.FileLoader fileLoader= new FileLoader(path);
             actual = fileLoader.Some(count);
             Assert.NotEqual(count,actual.Count);
-            Assert.Equal(3,actual.Count);
+            Assert.Equal(actualCount,actual.Count);
+        }
+
+        [Fact]
+        public void TestLoadAll()
+        {
+            const string path = "../../../input.txt";
+            const int count = 3;
+            FileLoader fileLoader = new FileLoader(path);
+            List<string> actual = fileLoader.All();
+            Assert.Equal(count,actual.Count);
         }
     }
 }

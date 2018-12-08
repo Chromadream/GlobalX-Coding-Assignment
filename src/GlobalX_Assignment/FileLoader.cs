@@ -34,5 +34,16 @@ namespace GlobalX_Assignment
             }
             return result;
         }
+
+        public List<string> All()
+        {
+            List<string> result = new List<string>();
+            IEnumerator<string> enumerator = Generator().GetEnumerator();
+            while(enumerator.MoveNext() != false)
+            {
+                result.Add(enumerator.Current);
+            }
+            return result;
+        }
     }
 }
