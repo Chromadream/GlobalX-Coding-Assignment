@@ -14,11 +14,17 @@ namespace GlobalX_Assignment
             writer.AutoFlush = true;
         }
 
+        // WriteOne()
+        // A generic method to write an object to file
+        // Have to implement ToString() 
         public void WriteOne<T>(T input)
         {
             writer.WriteLine(input.ToString());
         }
 
+        // WriteBatch()
+        // A generic method to write a list of objects to file
+        // utilizes WriteOne()
         public void WriteBatch<T>(List<T> input)
         {
             foreach (var item in input)

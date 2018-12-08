@@ -13,6 +13,8 @@ namespace GlobalX_Assignment
             instance = File.OpenText(fileName);
         }
 
+        // Generator()
+        // Returns an Enumerable instance of the file
         public IEnumerable<string> Generator()
         {
             while(instance.Peek() >= 0)
@@ -21,6 +23,8 @@ namespace GlobalX_Assignment
             }
         }
 
+        // Some()
+        // returns the List of string, with the size specified at input value
         public List<string> Some(int n)
         {
             List<string> result = new List<string>();
@@ -34,7 +38,9 @@ namespace GlobalX_Assignment
             }
             return result;
         }
-
+        
+        // All()
+        // returns all of the string available from the file
         public List<string> All()
         {
             List<string> result = new List<string>();
