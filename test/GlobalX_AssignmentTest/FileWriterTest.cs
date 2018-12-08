@@ -46,10 +46,7 @@ namespace GlobalX_AssignmentTest
             expected.Add("Jonathan Nicholas");
             expected.Add("Mirai Kuriyama");
             expected.Add("Shouko Nishimiya");
-            foreach (var item in expected)
-            {
-                input.Add(new Name(item));
-            }
+            input = Name.BatchConvert(expected);
             fileWriter.WriteBatch(input);
             FileLoader fileLoader = new FileLoader(path);
             List<string> actual = fileLoader.Some(input.Count);

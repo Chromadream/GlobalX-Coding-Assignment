@@ -14,16 +14,16 @@ namespace GlobalX_Assignment
             writer.AutoFlush = true;
         }
 
-        public void WriteOne(string input)
+        public void WriteOne<T>(T input)
         {
-            writer.WriteLine(input);
+            writer.WriteLine(input.ToString());
         }
 
         public void WriteBatch<T>(List<T> input)
         {
             foreach (var item in input)
             {
-                WriteOne(item.ToString());
+                WriteOne(item);
             }
         }
     }

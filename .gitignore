@@ -286,3 +286,4 @@ __pycache__/
 # End of https://www.gitignore.io/api/aspnetcore,visualstudiocode
 
 output.txt
+sorted-names-list.txt

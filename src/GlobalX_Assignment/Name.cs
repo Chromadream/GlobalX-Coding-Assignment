@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace GlobalX_Assignment
 {
@@ -32,6 +33,16 @@ namespace GlobalX_Assignment
         public string LastName
         {
             get{return this._lastName;}
+        }
+
+        public static List<Name> BatchConvert(List<string> input)
+        {
+            List<Name> output = new List<Name>();
+            foreach (var item in input)
+            {
+                output.Add(new Name(item));
+            }
+            return output;
         }
 
         // override object.Equals
