@@ -44,10 +44,10 @@ namespace GlobalX_Assignment
         public List<string> All()
         {
             List<string> result = new List<string>();
-            IEnumerator<string> enumerator = Generator().GetEnumerator();
-            while(enumerator.MoveNext() != false)
+            IEnumerable<string> enumerator = Generator();
+            foreach (var item in enumerator)
             {
-                result.Add(enumerator.Current);
+                result.Add(item);
             }
             return result;
         }
