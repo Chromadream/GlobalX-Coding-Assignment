@@ -3,7 +3,8 @@ mono: none
 dotnet: 2.1.500
 
 install:
-- dotnet restore
+- dotnet restore src/GlobalX_Assignment/GlobalX_Assignment.csproj
+- dotnet restore test/GlobalX_AssignmentTest/GlobalX_AssignmentTest.csproj
 
 script:
  - dotnet build src/GlobalX_Assignment/GlobalX_Assignment.csproj
