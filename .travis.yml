@@ -1,0 +1,10 @@
+language: csharp
+mono: none
+dotnet: 2.1.500
+
+install:
+- dotnet restore
+
+script:
+ - dotnet build src/GlobalX_Assignment/GlobalX_Assignment.csproj
+ - dotnet test test/GlobalX_AssignmentTest/GlobalX_AssignmentTest.csproj
