@@ -27,14 +27,21 @@ namespace GlobalX_Assignment
         // returns the List of string, with the size specified at input value
         public List<string> Some(int n)
         {
-            List<string> result = new List<string>();
-            IEnumerator<string> enumerator = Generator().GetEnumerator();
-            for (int i = 0; i < n; i++)
+            if(n <= 0)
             {
-                while(enumerator.MoveNext() != false)
+                return new List<string>();
+            }
+            List<string> result = new List<string>();
+            IEnumerable<string> enumerable = Generator();
+            int count = 0;
+            foreach (var item in enumerable)
+            {
+                if(count >= n)
                 {
-                    result.Add(enumerator.Current);
+                    break;
                 }
+                result.Add(item);
+                count++;
             }
             return result;
         }
@@ -44,8 +51,8 @@ namespace GlobalX_Assignment
         public List<string> All()
         {
             List<string> result = new List<string>();
-            IEnumerable<string> enumerator = Generator();
-            foreach (var item in enumerator)
+            IEnumerable<string> enumerable = Generator();
+            foreach (var item in enumerable)
             {
                 result.Add(item);
             }
